@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{a22d9cad-87ba-4263-8fe2-c18ce7461ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ActivationFunction">
+      <UniqueIdentifier>{caab88c6-83e0-4d2e-863f-678ac21b2116}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LAFileIO.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NeuralNetwork.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivationFunction.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="Sigmoid.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="ReLU.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="Step.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneticAlgorithm.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Identity.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="LAFileIO.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ActFncOperator.h">
+      <Filter>ActivationFunction</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
