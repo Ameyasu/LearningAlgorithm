@@ -17,6 +17,8 @@
 template<typename T>
 class NeuralNetwork
 {
+	static_assert(std::is_same_v<T, int> || std::is_same_v<T, double>, "NeuralNetwork template is only int or double");
+
 public:
 	NeuralNetwork();
 	~NeuralNetwork();

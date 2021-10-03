@@ -18,6 +18,9 @@
 template<typename Gene, typename Fitness>
 class GeneticAlgorithm
 {
+	static_assert(std::is_same_v<Gene, int> || std::is_same_v<Gene, double>, "GeneticAlgorithm template is only int or double");
+	static_assert(std::is_same_v<Fitness, int> || std::is_same_v<Fitness, double>, "GeneticAlgorithm template is only int or double");
+
 public:
 	GeneticAlgorithm();
 	~GeneticAlgorithm();
