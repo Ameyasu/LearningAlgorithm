@@ -252,11 +252,16 @@ inline void GeneticAlgorithm<Gene, Fitness>::generateNextGeneration()
 		for (int j = 0; j < m_chromosomeLength; ++j)
 		{
 			Gene diff = std::abs(indv[0][j] - indv[1][j]) / 2;
-			if (diff == 0)
-				if constexpr (std::is_same_v<Gene, int>)
+			if constexpr (std::is_same_v<Gene, int>)
+			{
+				if (diff == 0)
 					diff = 1;
-				else
-					diff = 0.1;
+			}
+			else
+			{
+				if (diff < std::numeric_limits<double>::epsilon() * 2.0)
+					diff = std::numeric_limits<double>::epsilon() * 2.0;
+			}
 			Gene min = std::max(m_chromosomeValueMin, std::min(indv[0][j], indv[1][j]) - diff);
 			Gene max = std::min(m_chromosomeValueMax, std::max(indv[0][j], indv[1][j]) + diff);
 			secondIndv[j] = rndG(min, max);
