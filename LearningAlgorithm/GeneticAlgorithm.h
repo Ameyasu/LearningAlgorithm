@@ -234,7 +234,7 @@ inline void GeneticAlgorithm<Gene, Fitness>::generateNextGeneration()
 		for (int j = 0; j < 2; ++j)
 		{
 			Fitness r = rndF(0, fitnessSum);
-			for (int k = m_eliteNum; k < m_population; ++k)
+			for (int k = m_eliteNum; k < m_population - 1; ++k)
 			{
 				r -= m_fitnesses[m_sortIndex[k]] + fitnessBase;
 				if (r <= 0)
@@ -243,6 +243,8 @@ inline void GeneticAlgorithm<Gene, Fitness>::generateNextGeneration()
 					break;
 				}
 			}
+			if (indv[j] == nullptr)
+				indv[j] = &m_individuals[m_sortIndex[m_population - 1] * m_chromosomeLength];
 		}
 
 		auto rndG = Random<Gene>();
